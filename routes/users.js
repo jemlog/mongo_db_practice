@@ -35,7 +35,7 @@ router.route('/')
 router.get('/:id/comments', async (req,res,next) => {
   try
   {
-   const comments = Comment.find({commenter : req.params.id}).populate('commenter')  // 해당 커멘터의 커멘트 다 불러오고 populate로 user까지 불러오기
+   const comments = await Comment.find({commenter : req.params.id}).populate('commenter')  // 해당 커멘터의 커멘트 다 불러오고 populate로 user까지 불러오기
    res.json(comments)
   }
   catch(err)

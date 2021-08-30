@@ -8,6 +8,7 @@ const connect = () => {
 }
 
 mongoose.connect('mongodb+srv://jemin:e1q3Qh66ySXWcG06@cluster0.mqlmq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+
 (error) => {
   if(error)
   {
