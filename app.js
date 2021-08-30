@@ -15,7 +15,7 @@ app.use('/comments',CommentRouter)
 
 
 app.use((req,res,next) => {
-  next(err)
+  next()
 })
 
 app.use((error,req,res,next) => {

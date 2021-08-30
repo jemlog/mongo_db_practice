@@ -32,6 +32,34 @@ router.route('/')
   }
 })
 
+router.route('/:id')
+.delete(async (req,res,next) => {
+  try
+  {
+    console.log(req.params.id)
+     await User.deleteOne({ _id : req.params.id })
+     res.send('delete compelete')
+  }
+  catch(error)
+  {
+    console.log(error)
+    next(error)
+  }
+})
+.put(async (req,res,next) => {
+  try
+  {
+    
+     const user = await User.updateOne({ _id : req.params.id },{name : 'i change my name'})
+     res.json(user);
+  }
+  catch(error)
+  {
+    console.log(error)
+    next(error)
+  }
+})
+
 router.get('/:id/comments', async (req,res,next) => {
   try
   {
